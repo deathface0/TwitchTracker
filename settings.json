@@ -1,6 +1,6 @@
 {
-    "CLIENT_ID":"",
-    "SECRET_ID":"",
-    "CHANNEL_NAME": [""],
-    "WEBHOOK":""
+    "CLIENT_ID":"mej6gms03uiwc2wnisvvp0htyn0pds",
+    "SECRET_ID":"470t3bkh55duwuv8jh8i2lqarovc76",
+    "CHANNEL_NAME": ["andypsx", "elmiillor2", "elmiillor"],
+    "WEBHOOK":"https://discord.com/api/webhooks/1101258381810995282/iwZySEsswmXafjeEc8SnTtO0Rd65YpURGPR4SDWLr7Ewzz6GFiooQVSS5wTuBGMT6j6s"
 }
