@@ -49,8 +49,8 @@ embed = {
 while True:
     for channel, live in CHANNELS.items():
         try:
-            image_req = requests.get(f"https://api.twitch.tv/helix/users?login={channel}", headers={"Client-ID": CLIENT_ID, "Authorization": f"Bearer {APP_TOKEN}"}).json
-            response = requests.get(f"https://api.twitch.tv/helix/streams?user_login={channel}", headers={"Client-ID": CLIENT_ID, "Authorization": f"Bearer {APP_TOKEN}"}).json
+            image_req = requests.get(f"https://api.twitch.tv/helix/users?login={channel}", headers={"Client-ID": CLIENT_ID, "Authorization": f"Bearer {APP_TOKEN}"}).json()
+            response = requests.get(f"https://api.twitch.tv/helix/streams?user_login={channel}", headers={"Client-ID": CLIENT_ID, "Authorization": f"Bearer {APP_TOKEN}"}).json()
             
             is_live = len(response["data"]) > 0     #CHECKING IF LIVE
 
@@ -63,10 +63,10 @@ while True:
             if is_live and live == False:
                 CHANNELS[channel] = True
                 live = requests.post(WEBHOOK, json={ "embeds": [embed] }, headers=headers)
-                #print(f'El canal {CHANNEL_NAME} está en vivo')    
+                #print(f'El canal {channel} está en vivo')    
             elif is_live == False and live == True:
                 CHANNELS[channel] = False
-                #print(f'El canal {CHANNEL_NAME} no está en vivo')
+                #print(f'El canal {channel} no está en vivo')
         except Exception as e:
             pass
             
